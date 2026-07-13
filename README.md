@@ -36,17 +36,18 @@ The project is being built step by step to learn modern full-stack web developme
 ## Current Progress
 
 - ✅ Express server setup
-- ✅ Basic routing
-- ✅ GET APIs
-- ✅ POST APIs
-- ✅ PUT APIs
-- ✅ DELETE APIs
+- ✅ Routing
+- ✅ Route parameters
+- ✅ Middleware
+- ✅ REST APIs
 - ✅ Complete CRUD operations
+- ✅ Module system (require and module.exports)
+- ✅ MVC Architecture
+
+
 
 
 ### Coming Soon
-- ⏳ Express Router
-- ⏳ MVC Architecture
 - ⏳ MongoDB
 - ⏳ Authentication (JWT)
 - ⏳ React Frontend
@@ -69,8 +70,19 @@ This project focuses on understanding:
 
 The goal is not just to build one project, but to understand how modern web applications are designed and developed.
 
-## 📌 Current Status
+## Changelog
 
-🟢 Backend CRUD completed.
+### v0.2.0
 
-Next milestone: Express Router & MVC Architecture.
+- Refactored backend into MVC architecture
+- Moved business logic into controllers
+- Added modular route handling
+- Separated data into its own module
+- Improved project structure and maintainability
+
+### v0.1.0
+
+- Created Express server
+- Implemented REST CRUD API
+- Added route parameters and middleware
+

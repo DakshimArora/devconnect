@@ -2,7 +2,7 @@ const express=require("express");
 const app=express();
 app.use(express.json())
 const PORT=3000;
-const users=[
+let users=[
     {
         id:1,
         name:"dakshim",
@@ -44,6 +44,42 @@ app.post("/users",(req,res)=>{
     res.status(201).json({
         message:"User received",
         user:newUser
+    })
+})
+app.put("/users/:id",(req,res)=>{
+    const id=Number(req.params.id);
+    const user=users.find((user)=>{
+        return user.id===id;
+    });
+    if(!user){
+        return res.status(404).json({
+            message:"User not found"
+        })
+    }
+    if(req.body.name) user.name=req.body.name
+    if(req.body.role) user.role=req.body.role
+    res.json({
+        message:"User updated successfully",
+        user
+    })
+})
+app.delete("/users/:id",(req,res)=>{
+    const id=Number(req.params.id);
+    const user=users.find((user)=>{
+        return user.id===id
+    })
+    if(!user){
+        return res.status(404).json({
+            message:"User not found"
+        })
+    }
+    const newUsers=users.filter((user)=>{
+        return user.id !== id
+    })
+    users=newUsers
+    res.json({
+        message:"User deleted successfully",
+        deletedUser:user 
     })
 })
 app.listen(PORT,()=>{

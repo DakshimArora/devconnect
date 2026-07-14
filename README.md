@@ -43,6 +43,8 @@ The project is being built step by step to learn modern full-stack web developme
 - ✅ Complete CRUD operations
 - ✅ Module system (require and module.exports)
 - ✅ MVC Architecture
+- ✅ Request logging middleware
+- ✅ User validation middleware
 
 
 
@@ -71,6 +73,13 @@ This project focuses on understanding:
 The goal is not just to build one project, but to understand how modern web applications are designed and developed.
 
 ## Changelog
+
+### v0.3.0
+
+- Added request logging middleware
+- Added user validation middleware
+- Improved middleware pipeline for POST requests
+
 
 ### v0.2.0
 

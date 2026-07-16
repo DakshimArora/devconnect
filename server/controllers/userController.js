@@ -1,65 +1,97 @@
-let users=require("../data/users")
+const User=require("../models/user")
 
-function getUsers(req,res){
-    res.json(users)
-}
-function getUserById(req,res){
-    const id=Number(req.params.id);
-    const user=users.find((user)=>{
-        return user.id===id;
-    })
-    if(!user){
-        return res.status(404).json({
-            message:"User not found"
+async function getUsers(req,res){
+    try{
+        const users=await User.find()
+        res.json(users)
+    }catch(error){
+        res.status(500).json({
+            message:"Internal server error"
         })
     }
-    res.json(user)
 }
-function addUser(req,res){
-    const newUser={
-        id:users.length + 1,
-        name:req.body.name,
-        role:req.body.role
-    }
-    users.push(newUser)
-    res.json({
-        message:"User added successfully",
-        newUser
-    })
-
-}
-function editUser(req,res){
-    const id=Number(req.params.id);
-    const user=users.find((user)=>{
-        return user.id===id
-    })
-    if(!user){
-        return res.status(404).json({
-            message:"User not found"
+async function getUserById(req,res){
+    try{
+        const id=req.params.id;
+        const user=await User.findById(id);
+        if(!user){
+            return res.status(404).json({
+                message:"User not found"
+            })
+        }
+        res.json(user)
+    }catch(error){
+        res.status(500).json({
+            message:"Internal server error"
         })
     }
-    if(req.body.name) user.name=req.body.name
-    if(req.body.role) user.role=req.body.role
-    res.json({
-        message:"User updated successfully",
-        user
-    })
 }
-function deleteUser(req,res){
-    const id=Number(req.params.id);
-    
-    const index=users.findIndex((user)=>{
-        return user.id===id
-    })
 
-    if(index===-1) return res.status(404).json({
-        message:"User not found"
-    })
-    const deletedUser=users.splice(index,1)      // does not create a new array, makes changes in the original array itself
-    res.json({
-        message:"User deleted successfully",
-        deletedUser
-    })
+
+async function addUser(req,res){
+    try{
+        const newUser={
+            name:req.body.name,
+            role:req.body.role
+        }
+        const createdUser=await User.create(newUser);
+        res.json({
+            message:"User added successfully",
+            createdUser
+        })
+    }catch(error){
+        res.status(500).json({
+            message:"Internal server error"
+        })
+    }
+}
+async function editUser(req,res){
+    try{
+        const id=req.params.id;
+        const user=await User.findByIdAndUpdate(
+            id,
+            {
+                name:req.body.name,
+                role:req.body.role
+            },
+            {
+                new:true
+            }
+        );
+        if(!user){
+            return res.status(404).json({
+                message:"User not found"
+            })
+        }
+        
+        res.json({
+            message:"User updated successfully",
+            user
+        })
+    }catch(error){
+        res.status(500).json({
+            message:"Internal server error"
+        })
+    }
+}
+async function deleteUser(req,res){
+    try{
+        const id=req.params.id;
+        const user=await User.findByIdAndDelete(id)
+        if(!user){
+            return res.status(404).json({
+                message:"User not found"
+            })
+        }
+        res.json({
+            message:"User deleted successfully",
+            user
+        })
+    }catch(error){
+        res.status(500).json({
+            message:"Internal server error"
+        })
+    }
 }
 
 module.exports={

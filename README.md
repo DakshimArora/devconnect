@@ -25,7 +25,7 @@ The project is being built step by step to learn modern full-stack web developme
 - React
 - React Router
 
-### Database (Coming Soon)
+### Database 
 - MongoDB
 - Mongoose
 
@@ -45,12 +45,13 @@ The project is being built step by step to learn modern full-stack web developme
 - ✅ MVC Architecture
 - ✅ Request logging middleware
 - ✅ User validation middleware
+- ✅ MongoDB Atlas integration
+- ✅ Mongoose ODM
 
 
 
 
 ### Coming Soon
-- ⏳ MongoDB
 - ⏳ Authentication (JWT)
 - ⏳ React Frontend
 - ⏳ User Profiles
@@ -73,6 +74,14 @@ This project focuses on understanding:
 The goal is not just to build one project, but to understand how modern web applications are designed and developed.
 
 ## Changelog
+
+### v0.4.0
+- Connected the backend to MongoDB Atlas using Mongoose.
+- Created a `User` model with a Mongoose schema.
+- Configured database connection using environment variables (`.env`).
+- Migrated all CRUD operations from an in-memory array to MongoDB.
+- Updated controllers to use asynchronous database queries with Mongoose.
+
 
 ### v0.3.0
 

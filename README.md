@@ -47,7 +47,7 @@ The project is being built step by step to learn modern full-stack web developme
 - ✅ User validation middleware
 - ✅ MongoDB Atlas integration
 - ✅ Mongoose ODM
-
+- ✅ Password hashing with bcrypt
 
 
 
@@ -74,6 +74,13 @@ This project focuses on understanding:
 The goal is not just to build one project, but to understand how modern web applications are designed and developed.
 
 ## Changelog
+
+### v0.5.0
+- Authentication module structure (`authRoutes` and `authController`).
+- User registration endpoint (`POST /auth/register`).
+- Password hashing using bcrypt.
+- Email uniqueness check before registration.
+- Secure registration response without exposing the password.
 
 ### v0.4.0
 - Connected the backend to MongoDB Atlas using Mongoose.

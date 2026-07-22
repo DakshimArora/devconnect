@@ -5,6 +5,7 @@ const logger=require("./middleware/logger")
 const dotenv=require("dotenv").config()
 const connectDB=require("./config/db");
 const e = require("express");
+const authRouter = require("./routes/authRoutes");
 
 
 app.use(express.json())
@@ -13,6 +14,7 @@ app.use(logger)
 const PORT=process.env.PORT;
 
 app.use("/users",router)
+app.use("/auth",authRouter)
 
 async function startServer(){
     await connectDB();

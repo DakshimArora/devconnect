@@ -1,19 +1,23 @@
 # DevConnect
 
-A full-stack social networking web application built while learning the MERN stack from scratch.
+A full-stack social networking web application.
 
 ## About
 
-DevConnect is a developer-focused social platform where users can:
+DevConnect is a developer-focused social networking platform being built while learning the MERN stack from scratch.
 
-- Create an account
-- Log in securely
-- Create and manage posts
-- Like and comment on posts
-- Follow other users
-- Edit their profiles
+The project aims to allow developers to:
 
-The project is being built step by step to learn modern full-stack web development.
+* Create an account
+* Log in securely
+* Discover other developers
+* Create and manage posts
+* Like and comment on posts
+* Follow other users
+* Edit their profiles
+
+The application is being built step by step, starting with user authentication and the core developer experience.
+
 
 ## 🛠 Tech Stack
 
@@ -21,42 +25,72 @@ The project is being built step by step to learn modern full-stack web developme
 - Node.js
 - Express.js
 
-### Frontend (Coming Soon)
+### Frontend 
 - React
 - React Router
+- CSS
 
 ### Database 
 - MongoDB
 - Mongoose
 
-### Authentication (Coming Soon)
+### Authentication 
 - JWT
 - bcrypt
 
 ## Current Progress
 
-- ✅ Express server setup
-- ✅ Routing
-- ✅ Route parameters
-- ✅ Middleware
-- ✅ REST APIs
-- ✅ Complete CRUD operations
-- ✅ Module system (require and module.exports)
-- ✅ MVC Architecture
-- ✅ Request logging middleware
-- ✅ User validation middleware
-- ✅ MongoDB Atlas integration
-- ✅ Mongoose ODM
-- ✅ Password hashing with bcrypt
+### Backend
+
+ ✅ Express server setup
+ ✅ Routing
+ ✅ Route parameters
+ ✅ Middleware
+ ✅ REST APIs
+ ✅ Complete CRUD operations
+ ✅ MVC Architecture
+ ✅ Request logging middleware
+ ✅ User validation middleware
+ ✅ MongoDB Atlas integration
+ ✅ Mongoose ODM
+ ✅ Authentication routes and controllers
+ ✅ User registration endpoint
+ ✅ Password hashing with bcrypt
+ ✅ Duplicate email detection
+
+### Frontend
+
+ ✅ React + Vite setup
+ ✅ React Router setup
+ ✅ Landing page
+ ✅ Register page
+ ✅ Controlled registration form
+ ✅ Frontend → Backend API integration
+ ✅ CORS configuration
+
+### Authentication
+
+ ✅ User registration
+ ✅ Password hashing
+ ✅ Email uniqueness check
+ ⏳ User login
+ ⏳ JWT authentication flow
+ ⏳ Protected routes
+
 
 
 
 ### Coming Soon
-- ⏳ Authentication (JWT)
-- ⏳ React Frontend
-- ⏳ User Profiles
-- ⏳ Posts & Comments
-- ⏳ Deployment
+
+ ⏳ Complete login functionality
+ ⏳ JWT-based authentication
+ ⏳ Protected routes
+ ⏳ Developer profiles
+ ⏳ Explore developers
+ ⏳ Posts & comments
+ ⏳ Follow system
+ ⏳ Deployment
+
 
 
 
@@ -76,11 +110,16 @@ The goal is not just to build one project, but to understand how modern web appl
 ## Changelog
 
 ### v0.5.0
-- Authentication module structure (`authRoutes` and `authController`).
-- User registration endpoint (`POST /auth/register`).
-- Password hashing using bcrypt.
-- Email uniqueness check before registration.
-- Secure registration response without exposing the password.
+
+- Added authentication module structure (`authRoutes` and `authController`).
+- Added user registration endpoint (`POST /auth/register`).
+- Added duplicate email detection.
+- Added password hashing using bcrypt.
+- Added secure registration response without exposing the password.
+- Added React frontend with React Router.
+- Added Register page with controlled form inputs.
+- Connected the React registration form to the Express backend.
+- Added CORS support for frontend-backend communication.
 
 ### v0.4.0
 - Connected the backend to MongoDB Atlas using Mongoose.

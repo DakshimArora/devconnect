@@ -1,5 +1,6 @@
-const User=require("../models/user")
+const User = require("../models/user");
 const bcrypt=require("bcrypt")
+const jwt=require("jsonwebtoken")
 async function registerUser(req,res){
     try{
         const {name,email,password}=req.body;
@@ -23,7 +24,7 @@ async function registerUser(req,res){
             user:{
                 id:user._id,
                 name:user.name,
-                email:user,email
+                email:user.email
             }
         })
     }catch(error){
@@ -32,6 +33,39 @@ async function registerUser(req,res){
         })
     }
 }
+async function loginUser(req,res){
+    try{
+        const {email,password}=req.body;
+        const user=await User.findOne({email});
+        if(!user){
+            return res.status(401).json({
+                message:"Invalid email or password"
+            })
+        }
+        const isMatch=await bcrypt.compare(password,user.password);
+        if(!isMatch){
+            return res.status(401).json({
+                message:"Invalid email or password"
+            })
+        }
+        const token=jwt.sign(
+        {
+            id:user._id
+        },
+        process.env.JWT_secret
+        );
+        res.status(200).json({
+            message:"Login successful",
+            token
+        })
+    }catch(error){
+        console.error("Register error:" ,error)
+        return res.status(500).json({
+            message:"Internal server error"
+        })
+    }
+}
 module.exports={
-    registerUser
+    registerUser,
+    loginUser
 };

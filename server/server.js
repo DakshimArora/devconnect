@@ -1,13 +1,13 @@
 const express=require("express");
+const cors=require("cors");
 const app=express();
 const router=require("./routes/userRoutes")
 const logger=require("./middleware/logger")
 const dotenv=require("dotenv").config()
 const connectDB=require("./config/db");
-const e = require("express");
 const authRouter = require("./routes/authRoutes");
 
-
+app.use(cors())
 app.use(express.json())
 app.use(logger)
 

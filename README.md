@@ -74,11 +74,6 @@ The application is being built step by step, starting with user authentication a
 
 ### Coming Soon
 
-- Complete login functionality
-- JWT-based authentication
-- Protected routes
-- Developer profiles
-- Explore developers
 - Posts & comments
 - Follow system
 - Deployment
@@ -100,6 +95,21 @@ This project focuses on understanding:
 The goal is not just to build one project, but to understand how modern web applications are designed and developed.
 
 ## Changelog
+
+
+### v0.6.0
+
+- Added React login page.
+- Added login API integration.
+- Implemented password verification using bcrypt.
+- Added JWT generation during login.
+- Added JWT authentication middleware.
+- Protected the GET /users endpoint.
+- Added JWT-based authenticated API requests from React.
+- Added Developers page.
+- Added dynamic developer cards using MongoDB data.
+- Added automatic navigation from Login to Developers.
+- Added styling for the Developers page.
 
 ### v0.5.0
 

@@ -41,55 +41,47 @@ The application is being built step by step, starting with user authentication a
 ## Current Progress
 
 ### Backend
-
- ✅ Express server setup
- ✅ Routing
- ✅ Route parameters
- ✅ Middleware
- ✅ REST APIs
- ✅ Complete CRUD operations
- ✅ MVC Architecture
- ✅ Request logging middleware
- ✅ User validation middleware
- ✅ MongoDB Atlas integration
- ✅ Mongoose ODM
- ✅ Authentication routes and controllers
- ✅ User registration endpoint
- ✅ Password hashing with bcrypt
- ✅ Duplicate email detection
+- Express server setup
+- Routing
+- Route parameters
+- Middleware
+- REST APIs
+- Complete CRUD operations
+- MVC Architecture
+- Request logging middleware
+- User validation middleware
+- MongoDB Atlas integration
+- Authentication routes and controllers
+- User registration endpoint
+- Password hashing with bcrypt
+- Duplicate email detection
 
 ### Frontend
-
- ✅ React + Vite setup
- ✅ React Router setup
- ✅ Landing page
- ✅ Register page
- ✅ Controlled registration form
- ✅ Frontend → Backend API integration
- ✅ CORS configuration
+- React + Vite setup
+- React Router setup
+- Landing page
+- Register page
+- Controlled registration form
+- Frontend → Backend API integration
+- CORS configuration
 
 ### Authentication
 
- ✅ User registration
- ✅ Password hashing
- ✅ Email uniqueness check
- ⏳ User login
- ⏳ JWT authentication flow
- ⏳ Protected routes
-
-
+- User registration
+- Password hashing
+- Email uniqueness check
 
 
 ### Coming Soon
 
- ⏳ Complete login functionality
- ⏳ JWT-based authentication
- ⏳ Protected routes
- ⏳ Developer profiles
- ⏳ Explore developers
- ⏳ Posts & comments
- ⏳ Follow system
- ⏳ Deployment
+- Complete login functionality
+- JWT-based authentication
+- Protected routes
+- Developer profiles
+- Explore developers
+- Posts & comments
+- Follow system
+- Deployment
 
 
 

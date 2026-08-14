@@ -1,4 +1,4 @@
-//its job is to connect to mangoDB
+//its job is to connect to mongoDB
 const mongoose=require("mongoose")
 async function connectDB() {
     try{

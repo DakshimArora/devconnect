@@ -52,7 +52,7 @@ async function loginUser(req,res){
         {
             id:user._id
         },
-        process.env.JWT_secret
+        process.env.JWT_SECRET
         );
         res.status(200).json({
             message:"Login successful",
